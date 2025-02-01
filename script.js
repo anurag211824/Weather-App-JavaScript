@@ -59,8 +59,12 @@ const checkWeather = async (city) => {
   }
 };
 
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click,enter", () => {
   checkWeather(searchBox.value);
 });
   
-  
+searchBox.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    checkWeather(searchBox.value);
+  }
+});
